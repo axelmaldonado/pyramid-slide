@@ -1,50 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <style>
-        #pyramid {
-            line-height: 0;
-            font-size: 30px;
-        }
-
-        body {
-            font-family: "Courier New", monospace;
-            text-align: center;
-        }
-
-        .invalid-field {
-            border: 1px solid red;
-        }
-
-        .error-message {
-            color: red;
-        }
-    </style>
-</head>
+    <head>
+        <style>
+            body {
+                display: inline-block;
+                align-content: center;
+                align-self: center;
+                max-width: 500px;
+                margin: auto;
+            }
+            .content {
+                display: block;
+                align-items: center;
+                width: 800px;
+                margin: 0 auto;
+                background: white;
+            }
+            .container {
+                margin: 0 auto;
+                padding: 20px; 
+                width: 500px;
+                border-color: purple;
+                border-width: 1px;
+                border-style: solid;
+                background: white;
+            }
+            .content h1 {
+                color:white;
+                background:darkmagenta;
+                text-align: center;
+                font-weight: bold;
+                padding: 20px;
+            }
+            .container label {
+                display: inline-block;
+                margin: 10px;
+            }
+            .container #pyramid {
+                width: 100%;
+                margin: 0 auto;
+                text-align: right;
+            }
+            .container .head-container {
+                align-items: center;
+            }
+            #height-label {
+                font-weight: bold;
+            }
+            .header {
+                display: inline-block;
+                background:lightgray;
+                width: 100%;
+                margin: 0;
+                padding: 0px;
+            }
+        </style>
+    </head>
 <body>
-    <h1>Mario 4</h1>
+    <div class="content">
+        <h1>Pyramid Slide</h1>
+        <div class="container">
+            <div class="header">
+                <label>Bick Symbol:
+                    <select id="brickType">
+                        <option value="#">#</option>   
+                        <option value="@">@</option>   
+                        <option value="X">X</option>   
+                        <option value="$">$</option>   
+                    </select>
+                </label>
+                <label>How High?
+                    <input id="height" type="range" min="1" max="20" value="8"/>
+                    <label id="height-label">8</label>
+                </label>           
+            </div>
+            <div id="pyramid">
+             <!-- Pyramid goes here -->
+            </div>
+            </div>
+        <script src="mario.js"></script>    
+    </div>
 
-    <p>When you say</p>
-    <p><strong>Draw a pyramid</strong></p>
-    <p>I say:</p>
-    <br>
-
-    <form id="draw-form">
-        <label>
-            How high?
-            <input type="text" id="height"/>
-            <label class="error-message">
-                <!-- If there was a user error, we will put a message in here -->
-            </label>
-        </label>
-        <br><br>
-        <input type="submit" value="Draw a pyramid"/>
-    </form>
-
-    <br><br>
-
-    <div id="pyramid"></div>
-
-    <script src="mario.js"></script>
 </body>
 </html>
